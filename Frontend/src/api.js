@@ -1,6 +1,7 @@
 /**
  * Simple API client for the Device Management backend.
- * Uses REACT_APP_API_BASE (default: /api).
+ * Uses REACT_APP_API_BASE (default: /api). In CRA dev, /api is proxied to backend (port 3001).
+ * In preview environments, ensure the backend is available at the same origin under /api or configure the proxy accordingly.
  */
 const API_BASE = process.env.REACT_APP_API_BASE || '/api';
 

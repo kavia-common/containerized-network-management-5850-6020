@@ -20,6 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 API base is controlled via REACT_APP_API_BASE (defaults to `/api`). Ensure the backend is reachable at the same origin under `/api` or configure a proxy.
 
+If you see "Invalid Host Header" in a cloud/preview environment, ensure `.env` contains:
+- HOST=0.0.0.0
+- PORT=3000
+- DANGEROUSLY_DISABLE_HOST_CHECK=true
+
+This allows the CRA dev server to accept connections from the preview host. The project’s package.json also sets `"proxy": "http://localhost:3001"` so `/api` requests are forwarded to the Flask backend in development.
+
 ### `npm test`
 
 Launches the test runner in interactive watch mode.
